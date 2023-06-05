@@ -121,7 +121,7 @@ const ekle=()=>{
 	const imgparent = document.querySelector(`#${seçiliAlan.value}-parent`)
 	const img = document.querySelector(`#${seçiliAlan.value}`)
 
-	img.setAttribute("src",fotolar[foto.value])
+	img.setAttribute("src",fotolar[foto.value -1 ])
 	img.setAttribute("style","display:inline-flex;")
 	imgparent.classList.remove("border-blue-600")
 

@@ -48,7 +48,7 @@
 					<p>
 						{{i.alan}}
 					</p>
-					<img :src="fotolar[i.seçilen]" class="w-8 bg-white saturate-150 border-black border" alt="">
+					<img :src="fotolar[i.seçilen - 1 ]" class="w-8 bg-white saturate-150 border-black border" alt="">
 					<button @click="sil(i)" class="border border-black rounded-lg bg-red-600 text-white w-fit px-2 h-6">sil</button>
 
 				</li>

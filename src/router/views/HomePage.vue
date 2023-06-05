@@ -61,14 +61,19 @@
 
 <script setup>
 import { ref, watch ,reactive} from "vue";
+import foto1 from "/src/assets/tasarımlar/1.png"
+import foto2 from "/src/assets/tasarımlar/2.png"
+import foto3 from "/src/assets/tasarımlar/3.png"
+import foto4 from "/src/assets/tasarımlar/4.png"
+import foto5 from "/src/assets/tasarımlar/5.png"
 
 
 const fotolar = [
-	"/src/assets/tasarımlar/1.png",
-	"/src/assets/tasarımlar/2.png",
-	"/src/assets/tasarımlar/3.png",
-	"/src/assets/tasarımlar/4.png",
-	"/src/assets/tasarımlar/5.png",
+	foto1,
+	foto2,
+	foto3,
+	foto4,
+	foto5,
 
 ]
 

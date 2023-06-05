@@ -48,7 +48,7 @@
 					<p>
 						{{i.alan}}
 					</p>
-					<img :src="`/src/assets/tasarımlar/${i.seçilen}.png`" class="w-8 bg-white saturate-150 border-black border" alt="">
+					<img :src="fotolar[i.seçilen]" class="w-8 bg-white saturate-150 border-black border" alt="">
 					<button @click="sil(i)" class="border border-black rounded-lg bg-red-600 text-white w-fit px-2 h-6">sil</button>
 
 				</li>
@@ -61,6 +61,16 @@
 
 <script setup>
 import { ref, watch ,reactive} from "vue";
+
+
+const fotolar = [
+	"/src/assets/tasarımlar/1.png",
+	"/src/assets/tasarımlar/2.png",
+	"/src/assets/tasarımlar/3.png",
+	"/src/assets/tasarımlar/4.png",
+	"/src/assets/tasarımlar/5.png",
+
+]
 
 const tshirt = reactive({
 	göğüsOrta :false,
@@ -105,9 +115,8 @@ const alanSec = (id)=>{
 const ekle=()=>{
 	const imgparent = document.querySelector(`#${seçiliAlan.value}-parent`)
 	const img = document.querySelector(`#${seçiliAlan.value}`)
-	const fotolink = `/src/assets/tasarımlar/${foto.value}.png`
 
-	img.setAttribute("src",fotolink)
+	img.setAttribute("src",fotolar[foto.value])
 	img.setAttribute("style","display:inline-flex;")
 	imgparent.classList.remove("border-blue-600")
 

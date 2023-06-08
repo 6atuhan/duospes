@@ -34,6 +34,8 @@
 				<img id="sağAlt"  alt="" src=""  onerror="this.style.display='none';"  class="opacity-90 ring-0 outline-none object-contain w-full h-full">
 			</div>
 		</div>
+		<button @click="yukle" class="border border-black px-2 py-1 bg-fuchsia-600 text-white  m-2">Yükle</button>
+
 		<div v-if="seçiliAlan != 'aa'" class="flex mt-10 gap-4 flex-wrap ">
 			<div @click="foto = 1"  :class="{'border border-black':foto == 1}" class="hover:scale-125">1 <img src="/src/assets/tasarımlar/1.png" class="w-10" alt=""  onerror="this.style.display='none';" ></div>
 			<div @click="foto = 2"  :class="{'border border-black':foto == 2}" class="hover:scale-125">2 <img src="/src/assets/tasarımlar/2.png" class="w-10" alt=""  onerror="this.style.display='none';" ></div>
@@ -56,11 +58,18 @@
 			</ul>
 		</div>
 	</div>
+	<div v-if="loading" id="loading" class="bg-black/80 opacity-100 transition-all z-[999] fixed top-0 left-0 h-screen w-screen flex items-center justify-center">
+		<embroidery-anim-comp></embroidery-anim-comp>
+	</div>
 </template>
 
 
 <script setup>
 import { ref, watch ,reactive} from "vue";
+
+import embroideryAnimComp from '/src/components/embroideryAnimComp.vue';
+
+
 import foto1 from "/src/assets/tasarımlar/1.png"
 import foto2 from "/src/assets/tasarımlar/2.png"
 import foto3 from "/src/assets/tasarımlar/3.png"
@@ -94,6 +103,7 @@ const tshirt = reactive({
 
 const seçiliAlan = ref("aa")
 const foto = ref(0)
+const loading = ref(false)
 const siparis = ref([])
 
 
@@ -144,6 +154,18 @@ const sil=(i)=>{
 	tshirt[i.alan]=false
 
 
+}
+
+const yukle =()=>{
+	loading.value=true
+	setTimeout(() => {
+		const loadingCont =document.querySelector("#loading")
+		loadingCont.classList.add("!opacity-0")
+		setTimeout(() => {
+			loading.value=false
+			
+		}, 500);
+	}, 2000);
 }
 </script>
 

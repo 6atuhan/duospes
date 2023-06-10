@@ -5,7 +5,17 @@ module.exports = {
   darkMode:"class",
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        "blue-ds":"#00FFFF",
+        "pink-ds" :"#b90082"
+      },
+      fontFamily:{
+
+        'TT-Alientz-Serif':["TT-Alientz-Serif"],
+        'TT-Alientz-Var':["TT-Alientz-Var"],
+      }
+    },
   },
   plugins: [],
 }

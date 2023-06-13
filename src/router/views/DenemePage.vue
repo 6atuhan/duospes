@@ -1,13 +1,18 @@
 <template>
-    <h1 class="basis-full text-3xl text-center font-bold font-TT-Alientz-Serif drop-shadow-md tracking-widest">duospes</h1>
-<div class="container mx-auto flex flex-wrap items-center justify-center p-10 transition-all " src="/src/assets/duospeslogo.png" alt="logo" :class="{'bg-gray-200 text-pink-ds' : selector==false , 'bg-gray-700 text-blue-ds' : selector==true}">
-    <!-- LEFT SIDE MENU -->
-    <div class="w-full basis-full  md:basis-1/3 md:order-1 order-2  border border-black flex flex-col items-center justify-start">
-        <h1 class="w-full text-center">{{ selector ? darkinfo.header:lightinfo.header  }}</h1>
-        <h1 class="w-full  text-center">{{ selector ? darkinfo.content:lightinfo.content }}</h1>
+    <div class="basis-full text-3xl text-center  h-10  font-bold font-TT-Alientz-Serif drop-shadow-md tracking-widest">
+      <h1 class=" w-fit h-10 mx-auto ">duospes
+        
+      </h1>
+    </div>
+<div class="container mx-auto flex flex-wrap items-center justify-center p-10 transition-all border-t-2 "  src="/src/assets/duospeslogo.png" alt="logo" :class="{'bg-gray-200 text-pink-ds border-pink-ds' : selector==false , 'bg-gray-700 border-blue-ds text-blue-ds' : selector==true}">
+    <!-- LEFT SIDE MENU -->                                                                                                                                
+    <div class="w-full basis-full  mt-16 md:mt-0  md:basis-1/3 md:order-1 order-3  flex flex-col items-center justify-start border-t-2 md:border-t-0 border-dashed" :class="{'border-pink-ds' : selector==false , 'border-blue-ds' : selector==true}">
+        <h1 class="w-full text-center text-3xl font-bold mt-16 md:mt-0">Ürün skalası.</h1>
+        <p class="w-full text-center h-10 ">{{ hoverClothesType }}</p>
+        
         <div class="flex items-center justify-center gap-2 p-2 flex-wrap w-full h-full">
             <!-- svit -->
-            <div class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':selector==false}">
+            <div @mouseenter="hoverClothesType = 'Sweatshirt'" @mouseleave="hoverClothesType=''" class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':selector==false}">
             <svg class="scale-100 group-hover:scale-105 transition-all cursor-pointer" :class="{'stroke-pink-ds' : selector==false , 'stroke-blue-ds' : selector==true}" width="64" height="64" viewBox="0 -9.89 80.819 80.819" xmlns="http://www.w3.org/2000/svg">
   <g id="Group_116" data-name="Group 116" transform="translate(-314.973 -274.638)">
     <g id="Group_42" data-name="Group 42">
@@ -19,7 +24,7 @@
             </svg>
             </div>
             <!-- hoodie -->
-            <div class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':selector==false}">
+            <div @mouseenter="hoverClothesType = 'Hoodie'" @mouseleave="hoverClothesType=''"  class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':selector==false}">
             <svg class="scale-100 group-hover:scale-105 transition-all cursor-pointer" :class="{'stroke-pink-ds' : selector==false , 'stroke-blue-ds' : selector==true}" width="64" height="64" viewBox="0 -6.02 84.477 84.477" xmlns="http://www.w3.org/2000/svg">
   <g id="Group_121" data-name="Group 121" transform="translate(-567.201 -160.411)">
     <g id="Group_22" data-name="Group 22">
@@ -39,7 +44,7 @@
 </svg>
             </div>
             <!-- polar -->
-            <div class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':selector==false}">
+            <div @mouseenter="hoverClothesType = 'Polar'" @mouseleave="hoverClothesType=''"  class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':selector==false}">
             <svg class="scale-100 group-hover:scale-105 transition-all cursor-pointer" :class="{'stroke-pink-ds' : selector==false , 'stroke-blue-ds' : selector==true}" width="64" height="64" viewBox="0 -5.19 84.333 84.333" xmlns="http://www.w3.org/2000/svg">
   <g id="Group_115" data-name="Group 115" transform="translate(-186.187 -268.182)">
     <g id="Group_46" data-name="Group 46">
@@ -51,7 +56,7 @@
 </svg>
             </div>
             <!-- polo -->
-            <div class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':selector==false}">
+            <div @mouseenter="hoverClothesType = 'Polo yaka'" @mouseleave="hoverClothesType=''"  class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':selector==false}">
             <svg class="scale-100 group-hover:scale-105 transition-all cursor-pointer" :class="{'stroke-pink-ds' : selector==false , 'stroke-blue-ds' : selector==true}" width="64" height="64" viewBox="0 -5.3 76.481 76.481" xmlns="http://www.w3.org/2000/svg">
   <g id="Group_122" data-name="Group 122" transform="translate(-444.171 -163.686)">
     <g id="Group_33" data-name="Group 33">
@@ -69,7 +74,7 @@
 </svg>      
             </div>
             <!-- basic cepli -->
-            <div class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':selector==false}">
+            <div @mouseenter="hoverClothesType = 'Basic cepli'" @mouseleave="hoverClothesType=''"  class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':selector==false}">
             <svg class="scale-100 group-hover:scale-105 transition-all cursor-pointer" :class="{'stroke-pink-ds' : selector==false , 'stroke-blue-ds' : selector==true}" width="64" height="64" viewBox="0 -4.49 74.772 74.772" xmlns="http://www.w3.org/2000/svg">
   <g id="Group_123" data-name="Group 123" transform="translate(-317.996 -163.725)">
     <g id="Group_15" data-name="Group 15">
@@ -87,7 +92,7 @@
             </div>
 
             <!-- basic -->
-            <div class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':selector==false}">
+            <div @mouseenter="hoverClothesType = 'Basic'" @mouseleave="hoverClothesType=''"  class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':selector==false}">
             <svg class="scale-100 group-hover:scale-105 transition-all cursor-pointer" :class="{'stroke-pink-ds' : selector==false , 'stroke-blue-ds' : selector==true}" width="64" height="64" viewBox="0 -4.55 74.894 74.894" xmlns="http://www.w3.org/2000/svg">
   <g id="Group_17" data-name="Group 17" transform="translate(-190.907 -163.725)">
     <g id="Group_16" data-name="Group 16">
@@ -97,7 +102,7 @@
 </svg>
             </div>
             <!-- spor atlet -->
-            <div class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':selector==false}">
+            <div @mouseenter="hoverClothesType = 'Spor atlet'" @mouseleave="hoverClothesType=''"  class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':selector==false}">
             <svg class="scale-100 group-hover:scale-105 transition-all cursor-pointer" :class="{'stroke-pink-ds' : selector==false , 'stroke-blue-ds' : selector==true}" width="64" height="64" viewBox="-9.7 0 63.41 63.41" xmlns="http://www.w3.org/2000/svg">
   <g id="Group_4" data-name="Group 4" transform="translate(-167.645 -58.383)">
     <g id="Group_3" data-name="Group 3">
@@ -107,7 +112,7 @@
 </svg>
             </div>
             <!-- atlet -->
-            <div class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':selector==false}">
+            <div @mouseenter="hoverClothesType = 'Günlük atlet'" @mouseleave="hoverClothesType=''"  class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':selector==false}">
                 <svg class="scale-100 group-hover:scale-105 transition-all cursor-pointer" :class="{'stroke-pink-ds' : selector==false , 'stroke-blue-ds' : selector==true}" width="64" height="64" viewBox="-9.7 0 63.411 63.411" xmlns="http://www.w3.org/2000/svg">
       <g id="Group_2" data-name="Group 2" transform="translate(-79.323 -58.383)">
         <g id="Group_1" data-name="Group 1">
@@ -122,15 +127,19 @@
         </div>
     </div>
     <!-- CENTER MENU -->
-    <div class="w-full basis-full md:basis-1/3 md:order-2 order-1 border h-96 group border-black flex flex-wrap items-center justify-center relative">
+    <div class="w-full basis-full md:basis-1/3 md:order-2 order-1 mb-10 md:mb-0 h-96 group  flex flex-wrap items-center justify-center relative">
         <div class="w-8 h-8 group-hover:invisible visible  animate-bounce z-[99] absolute top-16 right-6">
             <svg class="-rotate-[60deg]" :class="{'fill-blue-ds' : selector==true , 'fill-pink-600':selector==false}" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="32" height="32"><path d="M17.98,9.376,12,8.18V3.107A3.081,3.081,0,0,0,9.5.041,3,3,0,0,0,6,3V9.661L3.211,13.3a5.021,5.021,0,0,0,.249,6.794l2.4,2.425A5.036,5.036,0,0,0,9.414,24H17a5.006,5.006,0,0,0,5-5V14.279A5.013,5.013,0,0,0,17.98,9.376ZM20,19a3,3,0,0,1-3,3H9.414a3.022,3.022,0,0,1-2.134-.891l-2.4-2.428a3.03,3.03,0,0,1-.116-4.123L6,12.945V17a1,1,0,0,0,2,0V3a1,1,0,0,1,1.176-.985A1.082,1.082,0,0,1,10,3.107V9a1,1,0,0,0,.8.98l6.784,1.357A3.01,3.01,0,0,1,20,14.279Z"/></svg>
         </div>
-        <img @click="selector = !selector" class="  h-full drop-shadow-lg cursor-pointer transition-all scale-100 hover:scale-105 basis-1/3" src="/src/assets/duospeslogo.png" alt="logo" :class="{'rotate-0 hover:rotate-[12deg]' : selector==false , 'rotate-[180deg] hover:rotate-[192deg]' : selector==true}">
+        <img @click="selector = !selector" class="  h-80 drop-shadow-lg cursor-pointer transition-all scale-100 hover:scale-105 basis-1/3 select-none" src="/src/assets/duospeslogo.png" alt="logo" :class="{'rotate-0 hover:rotate-[12deg]' : selector==false , 'rotate-[180deg] hover:rotate-[192deg]' : selector==true}">
     </div>
     <!-- RIGHT SIDE MENU -->
-    <div class="w-full basis-full md:basis-1/3 md:order-3 order-3 border h-96 border-black flex flex-col items-center justify-center">
-        <div v-for="i in selector ? darkinfo.foto : lightinfo.foto " :key="i" class="w-10 h-10"> {{ i }}</div>
+    <div class="w-full basis-full md:basis-1/3 md:order-3 order-2  h-96  flex flex-col items-center justify-between border-t-2 md:border-t-0 border-dashed" :class="{'border-pink-ds' : selector==false , 'border-blue-ds' : selector==true}">
+      <h1 class="w-full text-center text-3xl font-bold mt-16">{{ selector ? darkinfo.header:lightinfo.header  }}</h1>
+        <h1 class="w-full  text-center">{{ selector ? darkinfo.content:lightinfo.content }}</h1>  
+        <button class="border-2 border-b-0 py-1 select-none rounded-t-xl font-bold text-xl transition-all   hover:scale-105 scale-100 group" :class="{'border-pink-ds' : selector==false , 'border-blue-ds' : selector==true}">
+        <p class="border-b-2 border-dashed w-full px-4 border-transparent transition-all " :class="{'group-hover:border-pink-ds' : selector==false , 'group-hover:border-blue-ds' : selector==true}">{{ selector ? 'Keşfet' : 'Tasarla' }}</p>
+        </button>
     </div>
 </div>
 
@@ -140,16 +149,16 @@
 import { reactive, ref } from "vue";
 
 const selector = ref(false)
-
+const hoverClothesType = ref("")
 const darkinfo= reactive({
-    header:"dark header",
-    content: "dark content",
-    foto:["1dark","2dark","3dark"]
+    header:"Hazır Ürünlere göz at...",
+    content: "Bu kategori işlemesi tamamlanmış kargolanmak için sabırsızlanan kıyafetleri kapsar. En belirgin özellikleri çok hızlı elinize ulaşmasıdır. ",
+
 })
 const lightinfo= reactive({
-    header:"light header",
-    content: "light content",
-    foto:["1light","2light","3light"]
+    header:"Kendi tasarımını özelleştir...",
+    content: "Bu kategoride zaten özel olan tasarımları, seçeceğiniz kombinasyon ve özelleştirmeler ile tamamen size ait eşsiz bir kıyafet elde edebilirsiniz. ",
+
 })
 
 </script>

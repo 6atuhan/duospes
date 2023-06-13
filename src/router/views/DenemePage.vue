@@ -1,19 +1,15 @@
 <template>
-    <div class="basis-full text-3xl text-center  h-10  font-bold font-TT-Alientz-Serif drop-shadow-md tracking-widest">
-      <h1 class=" w-fit h-10 mx-auto ">duospes
-        
-      </h1>
-    </div>
-<div class="container mx-auto flex flex-wrap items-center justify-center p-10 transition-all border-t-2 "  src="/src/assets/duospeslogo.png" alt="logo" :class="{'bg-gray-200 text-pink-ds border-pink-ds' : selector==false , 'bg-gray-700 border-blue-ds text-blue-ds' : selector==true}">
+
+<div class="container font-TT-Alientz-Var mx-auto flex flex-wrap items-center justify-center p-10 transition-all border-8 border-groove "  src="/src/assets/duospeslogo.png" alt="logo" :class="{'bg-gray-200 text-pink-ds border-pink-ds' : store.state.selector==false , 'bg-gray-700 border-blue-ds text-blue-ds' : store.state.selector==true}">
     <!-- LEFT SIDE MENU -->                                                                                                                                
-    <div class="w-full basis-full  mt-16 md:mt-0  md:basis-1/3 md:order-1 order-3  flex flex-col items-center justify-start border-t-2 md:border-t-0 border-dashed" :class="{'border-pink-ds' : selector==false , 'border-blue-ds' : selector==true}">
-        <h1 class="w-full text-center text-3xl font-bold mt-16 md:mt-0">Ürün skalası.</h1>
+    <div class="w-full basis-full  pt-16 md:mt-0  md:basis-1/3 md:order-1 order-3  flex flex-col items-center justify-center border-t-2 md:border-t-0 border-dashed" :class="{'border-pink-ds' : store.state.selector==false , 'border-blue-ds' : store.state.selector==true}">
+        <h1 class="w-full text-center text-3xl font-bold ">Ürün skalası.</h1>
         <p class="w-full text-center h-10 ">{{ hoverClothesType }}</p>
         
         <div class="flex items-center justify-center gap-2 p-2 flex-wrap w-full h-full">
             <!-- svit -->
-            <div @mouseenter="hoverClothesType = 'Sweatshirt'" @mouseleave="hoverClothesType=''" class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':selector==false}">
-            <svg class="scale-100 group-hover:scale-105 transition-all cursor-pointer" :class="{'stroke-pink-ds' : selector==false , 'stroke-blue-ds' : selector==true}" width="64" height="64" viewBox="0 -9.89 80.819 80.819" xmlns="http://www.w3.org/2000/svg">
+            <div @mouseenter="hoverClothesType = 'Sweatshirt'" @mouseleave="hoverClothesType=''" class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':store.state.selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':store.state.selector==false}">
+            <svg class="scale-100 group-hover:scale-105 transition-all cursor-pointer" :class="{'stroke-pink-ds' : store.state.selector==false , 'stroke-blue-ds' : store.state.selector==true}" width="64" height="64" viewBox="0 -9.89 80.819 80.819" xmlns="http://www.w3.org/2000/svg">
   <g id="Group_116" data-name="Group 116" transform="translate(-314.973 -274.638)">
     <g id="Group_42" data-name="Group 42">
       <g id="Group_41" data-name="Group 41">
@@ -24,8 +20,8 @@
             </svg>
             </div>
             <!-- hoodie -->
-            <div @mouseenter="hoverClothesType = 'Hoodie'" @mouseleave="hoverClothesType=''"  class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':selector==false}">
-            <svg class="scale-100 group-hover:scale-105 transition-all cursor-pointer" :class="{'stroke-pink-ds' : selector==false , 'stroke-blue-ds' : selector==true}" width="64" height="64" viewBox="0 -6.02 84.477 84.477" xmlns="http://www.w3.org/2000/svg">
+            <div @mouseenter="hoverClothesType = 'Hoodie'" @mouseleave="hoverClothesType=''"  class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':store.state.selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':store.state.selector==false}">
+            <svg class="scale-100 group-hover:scale-105 transition-all cursor-pointer" :class="{'stroke-pink-ds' : store.state.selector==false , 'stroke-blue-ds' : store.state.selector==true}" width="64" height="64" viewBox="0 -6.02 84.477 84.477" xmlns="http://www.w3.org/2000/svg">
   <g id="Group_121" data-name="Group 121" transform="translate(-567.201 -160.411)">
     <g id="Group_22" data-name="Group 22">
       <g id="Group_21" data-name="Group 21">
@@ -44,8 +40,8 @@
 </svg>
             </div>
             <!-- polar -->
-            <div @mouseenter="hoverClothesType = 'Polar'" @mouseleave="hoverClothesType=''"  class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':selector==false}">
-            <svg class="scale-100 group-hover:scale-105 transition-all cursor-pointer" :class="{'stroke-pink-ds' : selector==false , 'stroke-blue-ds' : selector==true}" width="64" height="64" viewBox="0 -5.19 84.333 84.333" xmlns="http://www.w3.org/2000/svg">
+            <div @mouseenter="hoverClothesType = 'Polar'" @mouseleave="hoverClothesType=''"  class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':store.state.selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':store.state.selector==false}">
+            <svg class="scale-100 group-hover:scale-105 transition-all cursor-pointer" :class="{'stroke-pink-ds' : store.state.selector==false , 'stroke-blue-ds' : store.state.selector==true}" width="64" height="64" viewBox="0 -5.19 84.333 84.333" xmlns="http://www.w3.org/2000/svg">
   <g id="Group_115" data-name="Group 115" transform="translate(-186.187 -268.182)">
     <g id="Group_46" data-name="Group 46">
       <g id="Group_45" data-name="Group 45">
@@ -56,8 +52,8 @@
 </svg>
             </div>
             <!-- polo -->
-            <div @mouseenter="hoverClothesType = 'Polo yaka'" @mouseleave="hoverClothesType=''"  class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':selector==false}">
-            <svg class="scale-100 group-hover:scale-105 transition-all cursor-pointer" :class="{'stroke-pink-ds' : selector==false , 'stroke-blue-ds' : selector==true}" width="64" height="64" viewBox="0 -5.3 76.481 76.481" xmlns="http://www.w3.org/2000/svg">
+            <div @mouseenter="hoverClothesType = 'Polo yaka'" @mouseleave="hoverClothesType=''"  class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':store.state.selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':store.state.selector==false}">
+            <svg class="scale-100 group-hover:scale-105 transition-all cursor-pointer" :class="{'stroke-pink-ds' : store.state.selector==false , 'stroke-blue-ds' : store.state.selector==true}" width="64" height="64" viewBox="0 -5.3 76.481 76.481" xmlns="http://www.w3.org/2000/svg">
   <g id="Group_122" data-name="Group 122" transform="translate(-444.171 -163.686)">
     <g id="Group_33" data-name="Group 33">
       <g id="Group_30" data-name="Group 30">
@@ -74,8 +70,8 @@
 </svg>      
             </div>
             <!-- basic cepli -->
-            <div @mouseenter="hoverClothesType = 'Basic cepli'" @mouseleave="hoverClothesType=''"  class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':selector==false}">
-            <svg class="scale-100 group-hover:scale-105 transition-all cursor-pointer" :class="{'stroke-pink-ds' : selector==false , 'stroke-blue-ds' : selector==true}" width="64" height="64" viewBox="0 -4.49 74.772 74.772" xmlns="http://www.w3.org/2000/svg">
+            <div @mouseenter="hoverClothesType = 'Basic cepli'" @mouseleave="hoverClothesType=''"  class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':store.state.selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':store.state.selector==false}">
+            <svg class="scale-100 group-hover:scale-105 transition-all cursor-pointer" :class="{'stroke-pink-ds' : store.state.selector==false , 'stroke-blue-ds' : store.state.selector==true}" width="64" height="64" viewBox="0 -4.49 74.772 74.772" xmlns="http://www.w3.org/2000/svg">
   <g id="Group_123" data-name="Group 123" transform="translate(-317.996 -163.725)">
     <g id="Group_15" data-name="Group 15">
       <g id="Group_14" data-name="Group 14">
@@ -92,8 +88,8 @@
             </div>
 
             <!-- basic -->
-            <div @mouseenter="hoverClothesType = 'Basic'" @mouseleave="hoverClothesType=''"  class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':selector==false}">
-            <svg class="scale-100 group-hover:scale-105 transition-all cursor-pointer" :class="{'stroke-pink-ds' : selector==false , 'stroke-blue-ds' : selector==true}" width="64" height="64" viewBox="0 -4.55 74.894 74.894" xmlns="http://www.w3.org/2000/svg">
+            <div @mouseenter="hoverClothesType = 'Basic'" @mouseleave="hoverClothesType=''"  class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':store.state.selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':store.state.selector==false}">
+            <svg class="scale-100 group-hover:scale-105 transition-all cursor-pointer" :class="{'stroke-pink-ds' : store.state.selector==false , 'stroke-blue-ds' : store.state.selector==true}" width="64" height="64" viewBox="0 -4.55 74.894 74.894" xmlns="http://www.w3.org/2000/svg">
   <g id="Group_17" data-name="Group 17" transform="translate(-190.907 -163.725)">
     <g id="Group_16" data-name="Group 16">
       <path id="Path_9" data-name="Path 9" d="M265.465,174.776c-3.41-2.693-13.283-6.1-13.732-6.282l-14.539-4.577a3.476,3.476,0,0,0-2.513.09c-1.975.808-6.282.808-6.282.808s-4.308,0-6.282-.808a3.7,3.7,0,0,0-2.6-.09l-14.539,4.577c-.449.179-10.231,3.5-13.732,6.282a.85.85,0,0,0-.179,1.167l7.988,13.911a.973.973,0,0,0,1.077.449c.628-.18,2.6-.538,3.59,0a1.482,1.482,0,0,1,.718.9l-.718,37.425a.919.919,0,0,0,.9.9h47.477a.815.815,0,0,0,.628-.269.966.966,0,0,0,.269-.628l-.718-37.425a1.7,1.7,0,0,1,.718-.9,4.918,4.918,0,0,1,3.59,0,1.092,1.092,0,0,0,1.077-.449l7.988-13.911A.837.837,0,0,0,265.465,174.776Zm-43.977-9.065c2.244.9,6.731.9,6.911.9s4.667,0,6.911-.987a1.934,1.934,0,0,1,.987-.09c-.359,2.692-2.064,11.129-7.988,13.821-5.923-2.692-7.629-11.039-7.988-13.821A4.581,4.581,0,0,1,221.488,165.711Zm-16.783,23.066a6.708,6.708,0,0,0-4.308-.359l-7.27-12.654c3.051-2.064,9.6-4.487,11.847-5.205a44.522,44.522,0,0,1,3.321,9.6c.538,3.141.628,7.09-.808,9.154a3.137,3.137,0,0,1-1.346,1.077A3.2,3.2,0,0,0,204.705,188.777Zm.9,38.861.718-35.63a5.1,5.1,0,0,0,2.6-1.795c2.244-3.051,1.526-8.436,1.167-10.59a48.689,48.689,0,0,0-3.321-9.783l11.937-3.68c.449,3.321,2.423,12.206,9.334,15.078a.538.538,0,0,0,.359.09h.09a.538.538,0,0,0,.359-.09c6.911-2.872,8.795-11.757,9.334-15.078l12.026,3.769a43.622,43.622,0,0,0-3.321,9.783c-.359,2.154-1.077,7.539,1.167,10.59a4.462,4.462,0,0,0,2.6,1.795l.628,35.63H205.6v-.089Zm50.887-39.22a6.708,6.708,0,0,0-4.308.359,3.165,3.165,0,0,0-1.346,1.526,2.6,2.6,0,0,1-1.346-1.077c-1.526-2.064-1.436-6.1-.808-9.154a46.385,46.385,0,0,1,3.321-9.6c2.244.808,8.706,3.231,11.847,5.205Z" fill="#1e1e1c"/>
@@ -102,8 +98,8 @@
 </svg>
             </div>
             <!-- spor atlet -->
-            <div @mouseenter="hoverClothesType = 'Spor atlet'" @mouseleave="hoverClothesType=''"  class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':selector==false}">
-            <svg class="scale-100 group-hover:scale-105 transition-all cursor-pointer" :class="{'stroke-pink-ds' : selector==false , 'stroke-blue-ds' : selector==true}" width="64" height="64" viewBox="-9.7 0 63.41 63.41" xmlns="http://www.w3.org/2000/svg">
+            <div @mouseenter="hoverClothesType = 'Spor atlet'" @mouseleave="hoverClothesType=''"  class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':store.state.selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':store.state.selector==false}">
+            <svg class="scale-100 group-hover:scale-105 transition-all cursor-pointer" :class="{'stroke-pink-ds' : store.state.selector==false , 'stroke-blue-ds' : store.state.selector==true}" width="64" height="64" viewBox="-9.7 0 63.41 63.41" xmlns="http://www.w3.org/2000/svg">
   <g id="Group_4" data-name="Group 4" transform="translate(-167.645 -58.383)">
     <g id="Group_3" data-name="Group 3">
       <path id="Path_2" data-name="Path 2" d="M211.638,85.714a1.945,1.945,0,0,0-.987-1.885c-7-3.59-5.116-19.3-4.4-22.168A1.8,1.8,0,0,0,205,59.6l-4.4-1.167a1.22,1.22,0,0,0-1.436.718l-.538,1.077c-2.513,6.282-4.128,10.5-9.065,10.5-4.846,0-6.552-4.128-9.065-10.411l-.449-1.077a1.222,1.222,0,0,0-1.436-.718L174.3,59.6a1.8,1.8,0,0,0-1.257,2.064c.718,2.962,2.692,18.668-4.4,22.168a1.875,1.875,0,0,0-.987,1.885l.18,1.077c.628,5.205,2.692,21.181.718,32.4a2.58,2.58,0,0,0,.449,1.795,2.259,2.259,0,0,0,1.795.808h0c.09,0,11.488-.9,18.847-.9s18.847.9,19.027.9a2.208,2.208,0,0,0,1.705-.808,1.926,1.926,0,0,0,.449-1.795c-1.974-11.218,0-27.194.628-32.4ZM189.65,72.432c5.295,0,7.539-3.859,9.783-9.244-.987,8.8-3.77,22.8-9.693,22.8s-8.706-14-9.693-22.706C182.111,68.572,184.355,72.432,189.65,72.432Zm20.1,14.18c-.718,5.834-2.693,21.45-.628,32.938,0,.179,0,.269-.09.359s-.18.179-.269.179-11.667-.9-19.116-.9-18.847.9-18.847.9a.468.468,0,0,1-.359-.179c-.09-.09-.09-.18-.09-.359,1.974-11.488,0-27.1-.718-32.938l-.18-1.077a.088.088,0,0,1,.09-.09c9.244-4.667,5.385-24.053,5.295-24.142l3.051-.808a101.6,101.6,0,0,0,1.885,12.834c2.154,9.6,5.475,14.45,9.872,14.539h0c4.308,0,7.629-4.936,9.872-14.539a102.629,102.629,0,0,0,1.885-12.924l2.962.718c0,.18-3.859,19.565,5.385,24.232l.09.09Z" fill="#1e1e1c"/>
@@ -112,8 +108,8 @@
 </svg>
             </div>
             <!-- atlet -->
-            <div @mouseenter="hoverClothesType = 'Günlük atlet'" @mouseleave="hoverClothesType=''"  class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':selector==false}">
-                <svg class="scale-100 group-hover:scale-105 transition-all cursor-pointer" :class="{'stroke-pink-ds' : selector==false , 'stroke-blue-ds' : selector==true}" width="64" height="64" viewBox="-9.7 0 63.411 63.411" xmlns="http://www.w3.org/2000/svg">
+            <div @mouseenter="hoverClothesType = 'Günlük atlet'" @mouseleave="hoverClothesType=''"  class="border border-black group rounded-full p-4 transition-all" :class="{'hover:border-black border-blue-ds hover:bg-blue-ds/10 border-2 hover:border-dashed':store.state.selector==true,'hover:border-black hover:bg-pink-ds/10  border-pink-ds border-2 hover:border-dashed':store.state.selector==false}">
+                <svg class="scale-100 group-hover:scale-105 transition-all cursor-pointer" :class="{'stroke-pink-ds' : store.state.selector==false , 'stroke-blue-ds' : store.state.selector==true}" width="64" height="64" viewBox="-9.7 0 63.411 63.411" xmlns="http://www.w3.org/2000/svg">
       <g id="Group_2" data-name="Group 2" transform="translate(-79.323 -58.383)">
         <g id="Group_1" data-name="Group 1">
           <path id="Path_1" data-name="Path 1" d="M123.315,81.227a1.945,1.945,0,0,0-.987-1.885h0c-7.09-3.59-5.205-14.45-4.4-17.681a1.8,1.8,0,0,0-1.257-2.064l-4.4-1.167a1.22,1.22,0,0,0-1.436.718c-2.513,6.193-9.154,6.193-9.513,6.193-.269,0-7,.09-9.424-6.193a1.221,1.221,0,0,0-1.436-.718L85.979,59.6a1.8,1.8,0,0,0-1.257,2.064c.718,3.231,2.693,14.18-4.4,17.681a1.875,1.875,0,0,0-.987,1.885c.538,4.218,2.962,25.937.9,37.964a2.58,2.58,0,0,0,.449,1.795,2.259,2.259,0,0,0,1.795.808h0c.09,0,11.488-.9,18.847-.9s18.847.9,19.027.9a2.208,2.208,0,0,0,1.705-.808,1.926,1.926,0,0,0,.449-1.795C120.443,107.164,122.776,85.445,123.315,81.227Zm-22.078-14.18c.09,0,6.1.09,9.693-4.667-.9,5.116-3.41,14.629-9.6,14.629s-8.706-9.424-9.6-14.629C95.313,67.136,101.237,67.047,101.237,67.047Zm19.565,52.5c0,.179,0,.269-.09.359s-.179.179-.269.179-11.667-.9-19.116-.9-18.847.9-18.847.9a.468.468,0,0,1-.359-.179c-.09-.09-.09-.18-.09-.359,2.154-12.3-.359-34.284-.9-38.5a.088.088,0,0,1,.09-.09c8.167-4.129,6.1-16.155,5.295-19.655l3.141-.808c.538,4.128,2.962,18.4,11.757,18.4h0c8.795,0,11.218-14.36,11.757-18.4l3.051.718c-.808,3.59-2.872,15.527,5.385,19.745l.09.09C120.981,85.355,118.558,107.254,120.8,119.549Z" fill="#1e1e1c"/>
@@ -127,18 +123,18 @@
         </div>
     </div>
     <!-- CENTER MENU -->
-    <div class="w-full basis-full md:basis-1/3 md:order-2 order-1 mb-10 md:mb-0 h-96 group  flex flex-wrap items-center justify-center relative">
+    <div class="w-full basis-full md:basis-1/3 md:order-2 order-1 mb-10 md:mb-0 h-64 md:h-96 group  flex flex-wrap items-center justify-center relative">
         <div class="w-8 h-8 group-hover:invisible visible  animate-bounce z-[99] absolute top-16 right-6">
-            <svg class="-rotate-[60deg]" :class="{'fill-blue-ds' : selector==true , 'fill-pink-600':selector==false}" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="32" height="32"><path d="M17.98,9.376,12,8.18V3.107A3.081,3.081,0,0,0,9.5.041,3,3,0,0,0,6,3V9.661L3.211,13.3a5.021,5.021,0,0,0,.249,6.794l2.4,2.425A5.036,5.036,0,0,0,9.414,24H17a5.006,5.006,0,0,0,5-5V14.279A5.013,5.013,0,0,0,17.98,9.376ZM20,19a3,3,0,0,1-3,3H9.414a3.022,3.022,0,0,1-2.134-.891l-2.4-2.428a3.03,3.03,0,0,1-.116-4.123L6,12.945V17a1,1,0,0,0,2,0V3a1,1,0,0,1,1.176-.985A1.082,1.082,0,0,1,10,3.107V9a1,1,0,0,0,.8.98l6.784,1.357A3.01,3.01,0,0,1,20,14.279Z"/></svg>
+            <svg class="-rotate-[60deg]" :class="{'fill-blue-ds' : store.state.selector==true , 'fill-pink-600':store.state.selector==false}" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="32" height="32"><path d="M17.98,9.376,12,8.18V3.107A3.081,3.081,0,0,0,9.5.041,3,3,0,0,0,6,3V9.661L3.211,13.3a5.021,5.021,0,0,0,.249,6.794l2.4,2.425A5.036,5.036,0,0,0,9.414,24H17a5.006,5.006,0,0,0,5-5V14.279A5.013,5.013,0,0,0,17.98,9.376ZM20,19a3,3,0,0,1-3,3H9.414a3.022,3.022,0,0,1-2.134-.891l-2.4-2.428a3.03,3.03,0,0,1-.116-4.123L6,12.945V17a1,1,0,0,0,2,0V3a1,1,0,0,1,1.176-.985A1.082,1.082,0,0,1,10,3.107V9a1,1,0,0,0,.8.98l6.784,1.357A3.01,3.01,0,0,1,20,14.279Z"/></svg>
         </div>
-        <img @click="selector = !selector" class="  h-80 drop-shadow-lg cursor-pointer transition-all scale-100 hover:scale-105 basis-1/3 select-none" src="/src/assets/duospeslogo.png" alt="logo" :class="{'rotate-0 hover:rotate-[12deg]' : selector==false , 'rotate-[180deg] hover:rotate-[192deg]' : selector==true}">
+        <img @click="store.state.selector = !store.state.selector" class=" h-52 md:h-80 drop-shadow-lg cursor-pointer transition-all scale-100 hover:scale-105 basis-1/3 select-none" src="/src/assets/duospeslogo.png" alt="logo" :class="{'rotate-0 hover:rotate-[12deg]' : store.state.selector==false , 'rotate-[180deg] hover:rotate-[192deg]' : store.state.selector==true}">
     </div>
     <!-- RIGHT SIDE MENU -->
-    <div class="w-full basis-full md:basis-1/3 md:order-3 order-2  h-96  flex flex-col items-center justify-between border-t-2 md:border-t-0 border-dashed" :class="{'border-pink-ds' : selector==false , 'border-blue-ds' : selector==true}">
-      <h1 class="w-full text-center text-3xl font-bold mt-16">{{ selector ? darkinfo.header:lightinfo.header  }}</h1>
-        <h1 class="w-full  text-center">{{ selector ? darkinfo.content:lightinfo.content }}</h1>  
-        <button class="border-2 border-b-0 py-1 select-none rounded-t-xl font-bold text-xl transition-all   hover:scale-105 scale-100 group" :class="{'border-pink-ds' : selector==false , 'border-blue-ds' : selector==true}">
-        <p class="border-b-2 border-dashed w-full px-4 border-transparent transition-all " :class="{'group-hover:border-pink-ds' : selector==false , 'group-hover:border-blue-ds' : selector==true}">{{ selector ? 'Keşfet' : 'Tasarla' }}</p>
+    <div class="w-full basis-full pt-16 md:mt-0 md:basis-1/3 md:order-3 order-2  h-96  flex flex-col items-center justify-between  border-t-2 md:border-t-0 border-dashed" :class="{'border-pink-ds' : store.state.selector==false , 'border-blue-ds' : store.state.selector==true}">
+      <h1 class="w-full text-center text-3xl font-bold">{{ store.state.selector ? darkinfo.header:lightinfo.header  }}</h1>
+        <h1 class="w-full  text-center">{{ store.state.selector ? darkinfo.content:lightinfo.content }}</h1>  
+        <button class="border-2 border-b-0 py-1 select-none rounded-t-xl font-bold text-xl transition-all   hover:scale-105 scale-100 group" :class="{'border-pink-ds' : store.state.selector==false , 'border-blue-ds' : store.state.selector==true}">
+        <p class="border-b-2 border-dashed w-full px-4 border-transparent transition-all " :class="{'group-hover:border-pink-ds' : store.state.selector==false , 'group-hover:border-blue-ds' : store.state.selector==true}">{{ store.state.selector ? 'Keşfet' : 'Tasarla' }}</p>
         </button>
     </div>
 </div>
@@ -147,8 +143,10 @@
 
 <script setup>
 import { reactive, ref } from "vue";
+import store from "/src/store"
 
-const selector = ref(false)
+
+
 const hoverClothesType = ref("")
 const darkinfo= reactive({
     header:"Hazır Ürünlere göz at...",
@@ -157,47 +155,14 @@ const darkinfo= reactive({
 })
 const lightinfo= reactive({
     header:"Kendi tasarımını özelleştir...",
-    content: "Bu kategoride zaten özel olan tasarımları, seçeceğiniz kombinasyon ve özelleştirmeler ile tamamen size ait eşsiz bir kıyafet elde edebilirsiniz. ",
+    content: "Bu kategoride zaten özel olan tasarımları, seçeceğiniz kombinasyon ve özelleştirmeler ile tamamen eşsiz birer kıyafetlere dönüştürebilirsiniz. ",
 
 })
 
 </script>
 
 <style >
-.slide-fwd-center {
-	-webkit-animation: slide-fwd-center 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
-	        animation: slide-fwd-center 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
-}/* ----------------------------------------------
- * Generated by Animista on 2023-6-10 18:21:18
- * Licensed under FreeBSD License.
- * See http://animista.net/license for more info. 
- * w: http://animista.net, t: @cssanimista
- * ---------------------------------------------- */
-
-/**
- * ----------------------------------------
- * animation slide-fwd-center
- * ----------------------------------------
- */
-@-webkit-keyframes slide-fwd-center {
-  0% {
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-  }
-  100% {
-    -webkit-transform: translateZ(160px);
-            transform: translateZ(160px);
-  }
+.border-groove{
+  border-style: ridge;
 }
-@keyframes slide-fwd-center {
-  0% {
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-  }
-  100% {
-    -webkit-transform: translateZ(160px);
-            transform: translateZ(160px);
-  }
-}
-
 </style>

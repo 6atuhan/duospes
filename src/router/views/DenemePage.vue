@@ -133,15 +133,16 @@
     <div class="w-full basis-full pt-16 md:mt-0 md:basis-1/3 md:order-3 order-2  h-96  flex flex-col items-center justify-between  border-t-2 md:border-t-0 border-dashed" :class="{'border-pink-ds' : store.state.selector==false , 'border-blue-ds' : store.state.selector==true}">
       <h1 class="w-full text-center text-3xl font-bold">{{ store.state.selector ? darkinfo.header:lightinfo.header  }}</h1>
         <h1 class="w-full  text-center">{{ store.state.selector ? darkinfo.content:lightinfo.content }}</h1>  
-        <button class="border-2 border-b-0 py-1 select-none rounded-t-xl font-bold text-xl transition-all   hover:scale-105 scale-100 group" :class="{'border-pink-ds' : store.state.selector==false , 'border-blue-ds' : store.state.selector==true}">
-        <p class="border-b-2 border-dashed w-full px-4 border-transparent transition-all " :class="{'group-hover:border-pink-ds' : store.state.selector==false , 'group-hover:border-blue-ds' : store.state.selector==true}">{{ store.state.selector ? 'Keşfet' : 'Tasarla' }}</p>
-        </button>
-    </div>
+
+        <embButtonComp :içerik="store.state.selector ?  'Keşfet' : 'Tasarla'"></embButtonComp>
+      </div>
 </div>
 
 </template>
 
 <script setup>
+import embButtonComp from "/src/components/embButtonComp.vue";
+
 import { reactive, ref } from "vue";
 import store from "/src/store"
 

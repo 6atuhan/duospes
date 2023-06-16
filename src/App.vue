@@ -1,16 +1,16 @@
 <template>
 <div class="flex items-center justify-between flex-col min-h-screen ">
-  <HeaderComp></HeaderComp>
+  <!-- <HeaderComp></HeaderComp> -->
   <router-view class="mb-auto">
   </router-view>
-  <FooterComp></FooterComp>
+  <!-- <FooterComp></FooterComp> -->
 
 </div>
 </template>
 
 <script setup>
-import HeaderComp from "/src/components/HeaderComp.vue"
-import FooterComp from "/src/components/FooterComp.vue"
+// import HeaderComp from "/src/components/HeaderComp.vue"
+// import FooterComp from "/src/components/FooterComp.vue"
 
 import store from "/src/store";
 </script>

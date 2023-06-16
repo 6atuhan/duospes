@@ -1,6 +1,6 @@
 <template>
 
-        <div class="pane rounded-2xl " id="pane2">
+        <div class="pane  " id="pane2">
                 <div class="stitch "></div>
                 <div id="stitching_group">
                   <div class="sewing-machine">
@@ -32,7 +32,8 @@
         
         
         /* needle pane */
-        --stitching-background: rgb(255, 56, 115);
+        /* --stitching-background: rgb(255, 56, 115); */
+        --stitching-background: rgb(185 28 28);
       --thread: rgb(255, 255, 255);
       --bottom-cloth: rgb(5, 4, 4);
       --top-margin: 2rem;

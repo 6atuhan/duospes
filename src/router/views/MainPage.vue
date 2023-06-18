@@ -1,5 +1,9 @@
 <template>
-	<div class="container bg-red-500/40 mx-auto mt-16  flex flex-wrap flex-row items-start justify-start" >
+	<div class="container mx-auto flex items-center justify-center flex-wrap gap-10 p-10">
+
+		<emb-card-comp v-for="(i,index) in fotolar" :key="index" :index="index" :img="i"></emb-card-comp>
+	</div>
+	<div v-if="false" class="container bg-white mx-auto mt-16  flex flex-wrap flex-row items-start justify-start" >
 		<h1 class="text-3xl font-bold w-full text-center"> seçili = {{ seçiliAlan }}</h1>
 		<div class="  border border-black w-80 relative bg-fuchsia-600 group">
 			<img src="/src/assets/pngwing.com.png" alt=""  onerror="this.style.display='none';"  class="">
@@ -68,7 +72,7 @@
 import { ref, watch ,reactive} from "vue";
 
 import embroideryAnimComp from '/src/components/embroideryAnimComp.vue';
-
+import embCardComp from "/src/components/embCardComp.vue";
 
 import foto1 from "/src/assets/tasarımlar/1.png"
 import foto2 from "/src/assets/tasarımlar/2.png"

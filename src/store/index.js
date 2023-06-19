@@ -1,7 +1,8 @@
 import { createStore } from "vuex";
 const store = createStore({
     state:{
-        selector:false
+        selector:false,
+        modalName:""
     }
 })
 

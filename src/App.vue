@@ -11,8 +11,13 @@
 <script setup>
 // import HeaderComp from "/src/components/HeaderComp.vue"
 // import FooterComp from "/src/components/FooterComp.vue"
-
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import { onMounted } from 'vue';
 import store from "/src/store";
+onMounted(()=>{
+  AOS.init()
+})
 </script>
 
 <style>

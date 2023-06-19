@@ -1,7 +1,7 @@
 <template>
-	<div class="container mx-auto flex items-center justify-center flex-wrap gap-10 p-10">
+	<div class="container mx-auto flex flex-row items-center justify-center flex-wrap gap-16 p-10">
 
-		<emb-card-comp v-for="(i,index) in fotolar" :key="index" :index="index" :img="i"></emb-card-comp>
+		<emb-card-comp v-for="(i,index) in fotolar"  data-aos="fade-left" :key="index" :index="index" :img="i"></emb-card-comp>
 	</div>
 	<div v-if="false" class="container bg-white mx-auto mt-16  flex flex-wrap flex-row items-start justify-start" >
 		<h1 class="text-3xl font-bold w-full text-center"> seçili = {{ seçiliAlan }}</h1>
@@ -65,14 +65,21 @@
 	<div v-if="loading" id="loading" class="bg-black/80 opacity-100 transition-all z-[999] fixed top-0 left-0 h-screen w-screen flex items-center justify-center">
 		<embroidery-anim-comp></embroidery-anim-comp>
 	</div>
+	<size-modal-comp v-if="store.state.modalName=='SizeModalComp'"></size-modal-comp>
+	<area-modal-comp v-if="store.state.modalName=='AreaModalComp'"></area-modal-comp>
 </template>
 
 
 <script setup>
 import { ref, watch ,reactive} from "vue";
 
+import store from "/src/store"
+
 import embroideryAnimComp from '/src/components/embroideryAnimComp.vue';
 import embCardComp from "/src/components/embCardComp.vue";
+import SizeModalComp from "/src/components/SizeModalComp.vue";
+import AreaModalComp from "/src/components/AreaModalComp.vue";
+
 
 import foto1 from "/src/assets/tasarımlar/1.png"
 import foto2 from "/src/assets/tasarımlar/2.png"

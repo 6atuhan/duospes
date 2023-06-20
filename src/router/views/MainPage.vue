@@ -1,9 +1,11 @@
 <template>
 	<div class="container mx-auto flex flex-row items-center justify-center flex-wrap gap-16 p-10">
+	<size-modal-comp v-if="store.state.modalName=='SizeModalComp'"></size-modal-comp>
+	<area-modal-comp v-if="store.state.modalName=='AreaModalComp'"></area-modal-comp>
 
 		<emb-card-comp v-for="(i,index) in fotolar"  data-aos="fade-left" :key="index" :index="index" :img="i"></emb-card-comp>
 	</div>
-	<div v-if="false" class="container bg-white mx-auto mt-16  flex flex-wrap flex-row items-start justify-start" >
+	<!-- <div v-if="false" class="container bg-white mx-auto mt-16  flex flex-wrap flex-row items-start justify-start" >
 		<h1 class="text-3xl font-bold w-full text-center"> seçili = {{ seçiliAlan }}</h1>
 		<div class="  border border-black w-80 relative bg-fuchsia-600 group">
 			<img src="/src/assets/pngwing.com.png" alt=""  onerror="this.style.display='none';"  class="">
@@ -64,9 +66,9 @@
 	</div>
 	<div v-if="loading" id="loading" class="bg-black/80 opacity-100 transition-all z-[999] fixed top-0 left-0 h-screen w-screen flex items-center justify-center">
 		<embroidery-anim-comp></embroidery-anim-comp>
-	</div>
-	<size-modal-comp v-if="store.state.modalName=='SizeModalComp'"></size-modal-comp>
-	<area-modal-comp v-if="store.state.modalName=='AreaModalComp'"></area-modal-comp>
+	</div> -->
+
+
 </template>
 
 
@@ -116,7 +118,6 @@ const seçiliAlan = ref("aa")
 const foto = ref(0)
 const loading = ref(false)
 const siparis = ref([])
-
 
 watch(seçiliAlan,(newValue,oldValue)=>{
 

@@ -28,7 +28,7 @@
             <p>Bu ürün <strong class="font-bold underline underline-offset-4 text-shadow-thin text-blue-400">göğüs</strong> bölgesi için öneriliyor.</p>
             <p>Dilerseniz istediğiniz bölgeye <strong class="text-shadow-thin underline underline-offset-4  text-pink-300">özelleştirebilirsiniz.</strong></p>
             <!-- bölge yardımı -->
-            <div @click="store.state.modalName='AreaModalComp'"  class="absolute top-2 -left-10 p-1 bg-white rounded-full shadowing cursor-pointer opacity-50 hover:opacity-100 transition-all">
+            <div @click="modalNameSelect('AreaModalComp')"  class="absolute top-2 -left-10 p-1 bg-white rounded-full shadowing cursor-pointer opacity-50 hover:opacity-100 transition-all">
             <p class="font-bold select-none bg-white rounded-full w-6 h-6 flex items-center justify-center border-2 border-blue-500 text-blue-500 border-dashed text-sm">?</p>
             </div>
         </div>
@@ -39,7 +39,7 @@
             <div class="cursor-pointer shadowing m-2 px-2 py-1 rounded-xl hover:bg-cyan-300  hover:text-cyan-900 bg-cyan-900 text-cyan-300 border border-cyan-700 scale-100 hover:scale-105 transition-all duration-75 lowercase w-10 text-center hover:!shadow-lime-500 hover:!shadow-md ">L</div>
             <div class="cursor-pointer shadowing m-2 px-2 py-1 rounded-xl hover:bg-cyan-300  hover:text-cyan-900 bg-cyan-900 text-cyan-300 border border-cyan-700 scale-100 hover:scale-105 transition-all duration-75 lowercase w-10 text-center hover:!shadow-lime-500 hover:!shadow-md ">XL</div>
             <!-- beden yardımı -->
-            <div @click="store.state.modalName='SizeModalComp'" class="absolute top-2 -right-8 p-1 bg-white rounded-full shadowing cursor-pointer opacity-50 hover:opacity-100 transition-all">
+            <div @click="modalNameSelect('SizeModalComp')" class="absolute top-2 -right-8 p-1 bg-white rounded-full shadowing cursor-pointer opacity-50 hover:opacity-100 transition-all">
             <p class="font-bold select-none bg-white rounded-full w-6 h-6 flex items-center justify-center border-2 border-cyan-500 text-cyan-500 border-dashed text-sm">?</p>
             </div>
         </div>
@@ -58,8 +58,8 @@ import { ref } from "vue";
 import store from "/src/store"
 
 const props = defineProps({
-    index:String,
-    img : Image
+    index:Number,
+    img : String
 })
 
 const flip = ref(false)
@@ -72,15 +72,14 @@ const flipping = (e) =>{
     }, 200);
 }
 
+const modalNameSelect=(mName)=>{
+    store.state.modalName=mName
+}
 
 </script>
 
 <style scoped  >
-.shadowing{
 
-box-shadow:  5px 5px 10px #666666,
-             -5px -5px 10px transparent;
-}
 
  .card__wave {
 

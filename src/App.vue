@@ -21,4 +21,9 @@ onMounted(()=>{
 </script>
 
 <style>
+.shadowing{
+
+box-shadow:  5px 5px 10px #666666,
+             -5px -5px 10px transparent;
+}
 </style>
